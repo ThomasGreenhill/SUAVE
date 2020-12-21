@@ -64,14 +64,14 @@ class Propeller(Energy_Component):
         self.pitch_command             = 0.0
         self.design_power              = None
         self.design_thrust             = None        
-        self.induced_hover_velocity    = None
+        self.induced_hover_velocity    = 0.0
         self.airfoil_geometry          = None
         self.airfoil_polars            = None
         self.airfoil_polar_stations    = None 
         self.radius_distribution       = None
         self.rotation                  = None
         self.ducted                    = False 
-        self.number_azimuthal_stations = 24
+        self.number_azimuthal_stations = 20
         self.induced_power_factor      = 1.48  #accounts for interference effects
         self.profile_drag_coefficient  = .03     
         self.case                      = 'uniform_freestream'
@@ -176,7 +176,7 @@ class Propeller(Energy_Component):
         pitch_c   = self.pitch_command
         theta     = self.thrust_angle 
         Na        = self.number_azimuthal_stations   
-        case      = self.analysis_settings.case
+        case      = 'isolated' #self.analysis_settings.case
         use_BET   = self.use_Blade_Element_Theory 
         
         BB      = B*B    
