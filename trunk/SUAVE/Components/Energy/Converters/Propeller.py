@@ -77,9 +77,10 @@ class Propeller(Energy_Component):
         self.case                      = 'uniform_freestream'
         self.rotation                  = [1] 
         self.use_Blade_Element_Theory  = False
+        vehicle = None
 
 
-    def spin(self,conditions,vehicle):
+    def spin(self,conditions,vehicle=None):
         """Analyzes a propeller given geometry and operating conditions.
 
         Assumptions:
@@ -157,7 +158,7 @@ class Propeller(Energy_Component):
         """         
            
         #Unpack    
-        B         = self.number_of_blades
+        B         = self.number_blades
         R         = self.tip_radius
         Rh        = self.hub_radius
         beta_0    = self.twist_distribution
