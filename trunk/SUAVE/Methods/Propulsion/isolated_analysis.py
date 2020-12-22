@@ -18,7 +18,7 @@ def isolated_analysis(vehicle, conditions, omega_guess = 1500*Units.rpm):
     #------------------------------------------------------------
     # Change analysis setting case to be uniform freestream:
     #------------------------------------------------------------
-    vehicle.propulsors.prop_net.propeller.analysis_settings.case = 'uniform_freestream'
+    vehicle.propulsors.prop_net.propeller.case = 'uniform_freestream'
     VLM_settings = VLM_setup(conditions)
     
     Weight = vehicle.mass_properties.takeoff

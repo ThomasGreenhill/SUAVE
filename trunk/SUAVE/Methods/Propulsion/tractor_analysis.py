@@ -22,7 +22,7 @@ def tractor_cruise_optimization(vehicle, conditions,Nprops ):
     VLM_settings.use_surrogate                   = False
     VLM_settings.propeller_wake_model            = True
     VLM_settings.wake_development_time           = 0.025
-    vehicle.propulsors.prop_net.propeller.analysis_settings.case = 'uniform_freestream'
+    vehicle.propulsors.prop_net.propeller.case = 'uniform_freestream'
 
 
     # Determine the isolated performance of the wing and propeller in a steady and level condition:

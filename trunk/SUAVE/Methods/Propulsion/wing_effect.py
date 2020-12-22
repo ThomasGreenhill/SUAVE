@@ -26,8 +26,8 @@ def wing_effect(vehicle,conditions):
     R_tip     = vehicle.propulsors.prop_net.propeller.tip_radius
     r_hub     = vehicle.propulsors.prop_net.propeller.hub_radius    
     prop_loc  = vehicle.propulsors.prop_net.propeller.prop_loc
-    case      = vehicle.propulsors.prop_net.propeller.analysis_settings.case
-    wake_type = vehicle.propulsors.prop_net.propeller.analysis_settings.wake_type
+    case      = vehicle.propulsors.prop_net.propeller.case
+    wake_type = vehicle.propulsors.prop_net.propeller.wake_type
       
     aoa       = conditions.aerodynamics.angle_of_attack
     mach      = conditions.freestream.mach_number

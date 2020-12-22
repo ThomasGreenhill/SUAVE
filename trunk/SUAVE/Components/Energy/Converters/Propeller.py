@@ -5,7 +5,8 @@
 # Modified: Jan 2016, T. MacDonald
 #           Feb 2019, M. Vegh            
 #           Mar 2020, M. Clarke
-#           Sep 2020, M. Clarke  #           Dec 2020, R. Erhard
+#           Sep 2020, M. Clarke  
+#           Dec 2020, R. Erhard
 
 # ----------------------------------------------------------------------
 #  Imports
@@ -76,7 +77,7 @@ class Propeller(Energy_Component):
         self.origin                    = [[0.,0.,0.]] 
         self.case                      = 'uniform_freestream'
         self.rotation                  = [1] 
-        self.use_Blade_Element_Theory  = True #False
+        self.use_Blade_Element_Theory  = False
         vehicle = None
 
 
@@ -185,7 +186,7 @@ class Propeller(Energy_Component):
         
         if case == 'disturbed_freestream':
             # The wing effect has already been evaluated with results appended to propeller
-            rotation = self.analysis_settings.rotation 
+            rotation = self.rotation 
             ua_wing  = self.disturbed_u
             uv_wing  = self.disturbed_v
             uw_wing  = self.disturbed_w 
@@ -431,7 +432,7 @@ class Propeller(Energy_Component):
                 uv_wing = np.reshape(uv_w,(Na,Nr))
     
                 # Need to adjust uv_wing and uw_wing to match the proper orientation of the propeller rotation
-                if rotation == 'ccw':
+                if rotation == [1]:
                     Vt_2d = omega_R_2d * (chi_2d  + mu_2d*np.sin(psi_2d)) + V_inf[:,0]*( -np.array(uw_wing)*np.cos(psi_2d) + np.array(uv_wing)*np.sin(psi_2d)  )  #+ np.array(ut_wing)*np.sin(psi_2d))                         # velocity tangential to the disk plane, positive toward the trailing edge eqn 6.34 pg 165           
                     Vr_2d = omega_R_2d * (mu_2d*np.cos(psi_2d)) +V_inf[:,0]*( - np.array(uw_wing)*np.sin(psi_2d)  - np.array(uv_wing)*np.cos(psi_2d)  ) #+ np.array(ut_wing)*np.cos(psi_2d))                                 # radial velocity , positive outward   eqn 6.35 pg 165                 
                     Va_2d = omega_R_2d * (lambda_2d) + V_inf[:,0]*np.array(ua_wing) # velocity perpendicular to the disk plane, positive downward  eqn 6.36 pg 166  
