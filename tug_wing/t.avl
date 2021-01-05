@@ -1,0 +1,81 @@
+tug first hand-toss model
+0                        Mach
+0       0     0          iYsym  iZsym  Zsym
+140000  105   1384       Sref   Cref   Bref   reference area, chord, span
+3.250   0     0          Xref   Yref   Zref   moment reference location (arb.)
+0                        CDp ref
+#
+#==============================================================
+#
+SURFACE
+WING
+4  1.0  27  -2.0  !  Nchord   Cspace   Nspan  Sspace
+#
+# reflect image wing about y=0 plane
+YDUPLICATE
+     0.00000 
+#
+# twist angle bias for whole surface
+ANGLE
+     0.00000    
+#
+# x,y,z bias for whole surface
+TRANSLATE
+    0.00000     0.00000     0.00000
+#--------------------------------------------------------------
+#    Xle         Yle         Zle         chord       angle   Nspan  Sspace
+SECTION
+     0            0           0          105           0       5      0.25
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10.dat
+#-----------------------
+SECTION
+     210          692         0          105           0
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10.dat
+#==============================================================
+#
+SURFACE
+Horizontal tail
+4  1.0  7  -1.5  ! Nchord   Cspace
+#
+YDUPLICATE
+     0.00000
+ANGLE
+     0.0000
+TRANSLATE
+    400     0     -9     ! adjust this x along with balance mass
+#--------------------------------------------------------------
+#    Xle         Yle         Zle         chord       angle   Nspan  Sspace
+SECTION
+     0           250           0           100        -4       5      0.25
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10u.dat
+#-----------------------
+SECTION
+     0           450           0           100        -4
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10u.dat
+#==============================================================
+#
+SURFACE
+Vertical tail
+6  1.0  10  0.5  ! Nchord   Cspace
+#
+YDUPLICATE
+     0.00000
+TRANSLATE
+    245     692     0
+#-----------------------
+SECTION
+     20          0         0          88           0
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10.dat
+#-----------------------
+SECTION
+     40          11        110        55           0
+AFIL
+C:\Users\thoma\SUAVE\tug_wing\ag10.dat
+
+#==============================================================
+
