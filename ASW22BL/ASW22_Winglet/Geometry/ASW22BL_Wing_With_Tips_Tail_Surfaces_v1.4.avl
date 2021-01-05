@@ -1,0 +1,227 @@
+# 
+# Notes:
+# 
+# TVG 01.05.2021
+ASW22BL_With_Empennage_and_Custom_Winglets_v1.4
+0.12                                 | Mach
+0     0     0.0                     | iYsym  iZsym  Zsym
+ 17.36575     0.65875    29.35000   | Sref   Cref   Bref
+  0.35512     0.00000     0.02440   | Xref   Yref   Zref
+ 0.00                               | CDp  (optional)
+
+#--------#
+## WING ##
+#--------#
+
+SURFACE                      | (keyword)
+Main Wing
+#Nchord    Cspace   [ Nspan Sspace ]
+13        1.0
+
+INDEX                        | (keyword)
+4442                         | Lsurf
+
+YDUPLICATE
+0.0
+
+SCALE
+1.0  1.0  1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+ANGLE
+   0.000                         | dAinc
+
+
+#____PANEL 1_______
+#______________
+SECTION                                                     |  (keyword)
+   0.0000    0.0000    0.0000    0.8300   0.000   19    3   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/HQ17.dat
+
+CONTROL
+aileron 1.0 0.85 0. 1. 0. -1
+
+CONTROL
+flaps 1.0 0.85 0. 1. 0. 1
+
+
+#____PANEL 2_______
+#______________
+SECTION                                                     |  (keyword)
+   0.0020    3.6250    0.0000    0.7800   0.000    3    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/29spanfoil.dat
+
+CONTROL
+aileron 1.0 0.86 0. 1. 0. -1
+
+CONTROL
+flaps 1.0 0.86 0. 1. 0. 1
+
+#____PANEL 3_______
+#______________
+SECTION                                                     |  (keyword)
+   0.0850    7.8750    0.0000    0.6140   0.000    1    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/63spanfoil.dat
+
+CONTROL
+aileron 1.0 0.87 0. 1. 0. -1
+
+CONTROL
+flaps 1.0 0.87 0. 1. 0. 1
+
+#____PANEL 4_______
+#______________
+SECTION                                                     |  (keyword)
+   0.2000   11.5000    0.0000    0.4400   0.000    1    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/92spanfoil.dat
+
+CONTROL
+aileron 1.0 0.88 0. 1. 0. -1
+
+CONTROL
+flaps 1.0 0.88 0. 1. 0. 1
+
+#____PANEL 5_______
+#______________
+SECTION                                                     |  (keyword)
+   0.2700   12.5000    0.0000    0.3400   0.000    1    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/DU84v1.dat
+
+CONTROL
+aileron 1.0 0.9 0. 1. 0. -1
+
+CONTROL
+flaps 1.0 0.9 0. 1. 0. 1
+
+#____PANEL 6_______
+#______________
+SECTION                                                     |  (keyword)
+   0.3750   14.2433    0.1525    0.1750   0.000    3    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/PSU94097v12D.dat
+
+CONTROL
+winglet 1.0 0.8 0.9363 0.2011 0.2881 1.0
+
+#____PANEL 7_______
+#______________
+SECTION                                                     |  (keyword)
+   0.7000   14.3131    0.5464    0.0750  -1.000    1    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/PSU94097v12D.dat
+
+CONTROL
+winglet 1.0 0.8 0.2011 0.2881 0.9363 1.0
+
+#______________
+SECTION                                                     |  (keyword)
+   0.7450   14.3173    0.5710    0.0450  -1.000    1    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/PSU94097v12D.dat
+
+CONTROL
+winglet 1.0 0.8 0.2011 0.2881 0.9363 1.0
+
+#-------------------------#
+## Horizontal Stabilizer ##
+#-------------------------#
+SURFACE                      | (keyword)
+Elevator
+#Nchord    Cspace   [ Nspan Sspace ]
+7        1.0
+
+INDEX                        | (keyword)
+4444                         | Lsurf
+
+YDUPLICATE
+0.0
+
+SCALE
+1.0  1.0  1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+ANGLE
+   0.000                         | dAinc
+
+
+#____PANEL 1_______
+#______________
+SECTION                                                     |  (keyword)
+   4.7700    0.0000    1.3800    0.4500   0.000    7    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/FX71.dat
+
+CONTROL
+elevator 1.0 0.7 0. 1. 0. 1.0
+
+
+#______________
+SECTION                                                     |  (keyword)
+   4.8700    1.5650    1.3800    0.3500   0.000    7    1   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/FX71.dat
+
+CONTROL
+elevator 1.0 0.7 0. 1. 0. 1.0
+
+#-----------------------#
+## Vertical Stabilizer ##
+#-----------------------#
+SURFACE                      | (keyword)
+Fin
+#Nchord    Cspace   [ Nspan Sspace ]
+7        1.0
+
+INDEX                        | (keyword)
+4445                         | Lsurf
+
+SCALE
+1.0  1.0  1.0
+
+TRANSLATE
+0.0  0.0  0.0
+
+ANGLE
+   0.000                         | dAinc
+
+
+#____PANEL 1_______
+#______________
+SECTION                                                     |  (keyword)
+   4.8000   -0.0000    1.3800    0.6000   0.000    7    0   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/FX71.dat
+
+CONTROL
+rudder 1.0 0.7 0. 0. 1. 1.0
+
+#______________
+SECTION                                                     |  (keyword)
+   3.8000    0.0000    0.0000    1.7000   0.000    7    0   | Xle Yle Zle   Chord Ainc   [ Nspan Sspace ]
+
+AFIL 0.0 1.0
+/Users/thomasgreenhill/SUAVE/ASW22BL/ASW22_Winglet/Airfoils/FX71.dat
+
+
+
+
